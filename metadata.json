@@ -1,0 +1,6 @@
+{
+  "name": "Stamp Hunter Indonesia",
+  "description": "Aplikasi komunitas pemburu stempel dan cap unik di Indonesia — temukan lokasi, panduan rute Google Maps, stamp rally, paspor digital, dan upload bukti hunting.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

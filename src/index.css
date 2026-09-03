@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FAFAF9;
+    color: #18181B;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #FEE2E2;
+    color: #991B1B;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  .font-display {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .font-stamp {
+    font-family: 'Special Elite', monospace, sans-serif;
+  }
+
+  .font-hand {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(#E4E4E7 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-topo-grid {
+  background-image: radial-gradient(rgba(244, 63, 94, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Splash & Stamp Keyframes */
+@keyframes stampSlam {
+  0% {
+    transform: scale(2.2) translateY(-60px) rotate(-10deg);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(0.95) translateY(0) rotate(2deg);
+    opacity: 1;
+  }
+  85% {
+    transform: scale(1.03) translateY(0) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes screenRumble {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 3px); }
+  50% { transform: translate(3px, -2px); }
+  75% { transform: translate(-1px, 1px); }
+}
+
+@keyframes shockwave {
+  0% {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+@keyframes footstepPulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+.animate-stamp-slam {
+  animation: stampSlam 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-rumble {
+  animation: screenRumble 0.35s ease-in-out;
+}
+
+.animate-shockwave {
+  animation: shockwave 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+.animate-footstep {
+  animation: footstepPulse 0.35s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+}
+
