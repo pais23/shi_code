@@ -25,13 +25,13 @@ interface FootstepPoint {
 
 // 7 crisp, brisk footsteps along a winding path (fast & responsive)
 const FOOTSTEPS_PATH: FootstepPoint[] = [
-  { id: 1, x: 20, y: 80, angle: -30, isLeft: true },
+  { id: 1, x: 20, y: 80, angle: -30, isLeft: true, landmark: { name: 'Mulai', icon: '🚩' } },
   { id: 2, x: 32, y: 68, angle: -40, isLeft: false, landmark: { name: 'Stasiun', icon: '🚂' } },
   { id: 3, x: 50, y: 62, angle: 20, isLeft: true },
   { id: 4, x: 68, y: 54, angle: 45, isLeft: false, landmark: { name: 'Kantor Pos', icon: '📮' } },
   { id: 5, x: 74, y: 38, angle: 100, isLeft: true },
   { id: 6, x: 58, y: 28, angle: 160, isLeft: false, landmark: { name: 'Museum', icon: '🏛️' } },
-  { id: 7, x: 42, y: 25, angle: -120, isLeft: true, landmark: { name: 'Titik Cap', icon: '📍' } },
+  { id: 7, x: 42, y: 25, angle: -120, isLeft: true, landmark: { name: 'Selesai', icon: '🏁' } },
 ];
 
 const STEP_START_DELAY_MS = 220;
@@ -203,7 +203,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
           {/* Winding Curving Trail SVG Guide Line */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path
-              d="M 20,80 Q 32,68 50,62 T 74,38 Q 64,28 42,25"
+              d="M 20,80 Q 26,72 32,68 T 50,62 T 68,54 Q 74,46 74,38 Q 66,31 58,28 Q 50,25 42,25"
               fill="none"
               stroke="rgba(225, 29, 72, 0.42)"
               strokeWidth="0.8"
@@ -243,7 +243,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
                     }`}
                   >
                     <span>{step.landmark.icon}</span>
-                    <span className="hidden sm:inline">{step.landmark.name}</span>
+                    <span>{step.landmark.name}</span>
                   </motion.div>
                 )}
 

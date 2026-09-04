@@ -33,6 +33,7 @@ import { NotificationModal } from './components/NotificationModal';
 import { OfflineManagerModal } from './components/OfflineManagerModal';
 import { SplashScreen } from './components/SplashScreen';
 import { AdminPortal } from './components/AdminPortal';
+import { StampCursor } from './components/StampCursor';
 
 export default function App() {
   // Application Mode: '/admin' is the curator dashboard, '/' is the member experience.
@@ -418,27 +419,31 @@ export default function App() {
   // If user is currently in Admin View, show the dedicated Admin Portal
   if (currentView === 'admin') {
     return (
-      <AdminPortal
-        locations={locations}
-        proposedLocations={proposedLocations}
-        rallies={rallies}
-        hunts={hunts}
-        onApproveProposal={handleAdminApproveProposal}
-        onRejectProposal={handleAdminRejectProposal}
-        onAddLocation={handleAdminAddLocation}
-        onUpdateLocation={handleAdminUpdateLocation}
-        onDeleteLocation={handleAdminDeleteLocation}
-        onAddRally={handleAdminAddRally}
-        onUpdateRallyStatus={handleAdminUpdateRallyStatus}
-        onDeleteRally={handleAdminDeleteRally}
-        onDeleteHunt={handleAdminDeleteHunt}
-      />
+      <>
+        <StampCursor />
+        <AdminPortal
+          locations={locations}
+          proposedLocations={proposedLocations}
+          rallies={rallies}
+          hunts={hunts}
+          onApproveProposal={handleAdminApproveProposal}
+          onRejectProposal={handleAdminRejectProposal}
+          onAddLocation={handleAdminAddLocation}
+          onUpdateLocation={handleAdminUpdateLocation}
+          onDeleteLocation={handleAdminDeleteLocation}
+          onAddRally={handleAdminAddRally}
+          onUpdateRallyStatus={handleAdminUpdateRallyStatus}
+          onDeleteRally={handleAdminDeleteRally}
+          onDeleteHunt={handleAdminDeleteHunt}
+        />
+      </>
     );
   }
 
   // Otherwise, render the member-facing application
   return (
     <div className="min-h-screen flex flex-col bg-stone-100/70 text-zinc-900 pb-28 sm:pb-24 md:pb-12 font-sans selection:bg-rose-600 selection:text-white">
+      <StampCursor />
       
       {/* 0. Animated Curving Footsteps & Rubber Stamp Splash Screen */}
       {showSplash && (
