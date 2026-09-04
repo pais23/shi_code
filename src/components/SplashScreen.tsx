@@ -236,7 +236,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
                       y: isVisible ? 0 : 4
                     }}
                     transition={{ duration: 0.2 }}
-                    className={`absolute -top-7 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[10px] font-semibold whitespace-nowrap flex items-center gap-1 border shadow-xs ${
+                    className={`splash-landmark splash-landmark-${step.id} absolute -top-7 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[10px] font-semibold whitespace-nowrap flex items-center gap-1 border shadow-xs ${
                       isVisible 
                         ? 'bg-white text-zinc-800 border-rose-400 ring-2 ring-rose-500/20' 
                         : 'bg-white/70 text-zinc-500 border-zinc-300'

@@ -108,6 +108,36 @@ body.stamp-cursor-active * {
   animation: cursorStampMark 0.42s ease-out forwards;
 }
 
+@media (max-width: 640px) {
+  .splash-landmark {
+    top: -1.9rem;
+    padding: 0.125rem 0.3rem;
+    font-size: 9px;
+    gap: 0.2rem;
+  }
+
+  .splash-landmark-1 {
+    left: 0;
+  }
+
+  .splash-landmark-2 {
+    left: -0.35rem;
+  }
+
+  .splash-landmark-4 {
+    top: -1.2rem;
+    left: -1.5rem;
+  }
+
+  .splash-landmark-6 {
+    left: 0.8rem;
+  }
+
+  .splash-landmark-7 {
+    left: -3.3rem;
+  }
+}
+
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
