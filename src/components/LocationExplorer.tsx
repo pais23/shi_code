@@ -200,10 +200,10 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
       </div>
 
       {/* Control Bar: Search on mobile + View Mode Switch + Filter Bars */}
-      <div className="space-y-3.5 bg-white p-4 sm:p-5 rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.03)] border border-zinc-200/80">
+      <div className="space-y-3.5 bg-white p-3.5 sm:p-5 rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.03)] border border-zinc-200/80">
         
         {/* Top Controls: Mobile Search + View Mode Buttons */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
           
           {/* Search Input */}
           <div className="flex-1 relative">
@@ -228,10 +228,10 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
           </div>
 
           {/* View Mode Toggle (Pills) */}
-          <div className="flex items-center gap-1 bg-zinc-100 p-1 rounded-full self-end sm:self-auto">
+          <div className="grid grid-cols-3 items-center gap-1 bg-zinc-100 p-1 rounded-full w-full sm:w-auto self-stretch sm:self-auto">
             <button
               onClick={() => setViewMode('both')}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              className={`px-2 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 viewMode === 'both'
                   ? 'bg-white text-zinc-900 shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-900'
@@ -242,7 +242,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
 
             <button
               onClick={() => setViewMode('map')}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              className={`px-2 py-1.5 rounded-full text-xs font-semibold flex items-center justify-center gap-1.5 transition-all ${
                 viewMode === 'map'
                   ? 'bg-white text-zinc-900 shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-900'
@@ -254,7 +254,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
 
             <button
               onClick={() => setViewMode('list')}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              className={`px-2 py-1.5 rounded-full text-xs font-semibold flex items-center justify-center gap-1.5 transition-all ${
                 viewMode === 'list'
                   ? 'bg-white text-zinc-900 shadow-xs'
                   : 'text-zinc-600 hover:text-zinc-900'
@@ -285,16 +285,16 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
         </div>
 
         {/* Filter Dropdowns & Quick Toggles */}
-        <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-zinc-100 text-xs">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col items-stretch gap-3 pt-3 border-t border-zinc-100 text-xs sm:flex-row sm:items-center sm:justify-between sm:gap-2">
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center">
             
             {/* City Dropdown */}
-            <div className="flex items-center gap-1.5 bg-zinc-100 px-3 py-1.5 rounded-full border border-zinc-200/70">
+            <div className="col-span-2 flex min-w-0 items-center gap-1.5 bg-zinc-100 px-3 py-2 rounded-xl border border-zinc-200/70 sm:col-span-auto sm:rounded-full sm:py-1.5">
               <span className="text-zinc-500 font-medium">Kota:</span>
               <select
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
-                className="bg-transparent font-semibold text-zinc-800 focus:outline-none cursor-pointer"
+                className="min-w-0 flex-1 bg-transparent font-semibold text-zinc-800 focus:outline-none cursor-pointer"
               >
                 <option value="all">Semua Kota ({uniqueCities.length})</option>
                 {uniqueCities.map((city) => (
@@ -306,7 +306,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
             </div>
 
             {/* Sort Dropdown */}
-            <div className="flex items-center gap-1.5 bg-zinc-100 px-3 py-1.5 rounded-full border border-zinc-200/70">
+            <div className="col-span-2 flex min-w-0 items-center gap-1.5 bg-zinc-100 px-3 py-2 rounded-xl border border-zinc-200/70 sm:col-span-auto sm:rounded-full sm:py-1.5">
               <ArrowUpDown className="w-3 h-3 text-zinc-500" />
               <span className="text-zinc-500 font-medium">Urutkan:</span>
               <select
@@ -318,7 +318,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
                   }
                   setSortBy(val);
                 }}
-                className="bg-transparent font-semibold text-zinc-800 focus:outline-none cursor-pointer"
+                className="min-w-0 flex-1 bg-transparent font-semibold text-zinc-800 focus:outline-none cursor-pointer"
               >
                 <option value="popular">Terpopuler</option>
                 <option value="distance">Jarak Terdekat (GPS)</option>
@@ -329,7 +329,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
             {/* Wishlist Quick Toggle */}
             <button
               onClick={() => setOnlyWishlist(!onlyWishlist)}
-              className={`px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 border transition-all ${
+              className={`justify-center px-2.5 py-2 rounded-xl font-semibold flex items-center gap-1.5 border transition-all sm:px-3 sm:py-1.5 sm:rounded-full ${
                 onlyWishlist
                   ? 'bg-rose-50 text-rose-700 border-rose-200'
                   : 'bg-zinc-100 text-zinc-700 border-zinc-200/70 hover:bg-zinc-200/70'
@@ -342,7 +342,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
             {/* Event Rally Only Toggle */}
             <button
               onClick={() => setOnlyEvents(!onlyEvents)}
-              className={`px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 border transition-all ${
+              className={`justify-center px-2.5 py-2 rounded-xl font-semibold flex items-center gap-1.5 border transition-all sm:px-3 sm:py-1.5 sm:rounded-full ${
                 onlyEvents
                   ? 'bg-amber-50 text-amber-800 border-amber-200'
                   : 'bg-zinc-100 text-zinc-700 border-zinc-200/70 hover:bg-zinc-200/70'
@@ -353,7 +353,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
             </button>
           </div>
 
-          <span className="text-zinc-500 font-medium">
+          <span className="text-zinc-500 font-medium sm:shrink-0">
             Menampilkan <strong className="text-zinc-900">{filteredLocations.length}</strong> lokasi
           </span>
         </div>
