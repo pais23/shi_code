@@ -355,7 +355,7 @@ export const UploadModal: React.FC<UploadModalProps> = ({
               type="submit"
               className="w-full inline-flex items-center justify-center gap-2 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-full text-xs font-semibold uppercase tracking-wider shadow-xs transition-colors"
             >
-              <Sparkles className="w-4 h-4" />
+              {/* <Sparkles className="w-4 h-4" /> */}
               <span>Simpan ke Paspor Digital & Feed</span>
             </button>
           </div>

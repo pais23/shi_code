@@ -294,7 +294,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
             <div className="flex items-center justify-between pb-1">
               <div>
                 <h3 className="text-base font-display font-bold text-zinc-900 flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-rose-600" />
+                  {/* <Sparkles className="w-4 h-4 text-rose-600" /> */}
                   <span>Aksi Berburu Stempel</span>
                 </h3>
                 <p className="text-xs text-zinc-500">Pilih aktivitas hunting yang ingin kamu lakukan</p>

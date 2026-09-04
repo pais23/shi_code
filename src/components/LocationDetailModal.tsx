@@ -184,7 +184,7 @@ export const LocationDetailModal: React.FC<LocationDetailModalProps> = ({
           {/* Description & Stamp Design Info */}
           <div className="space-y-2">
             <h3 className="text-sm font-bold text-zinc-900 flex items-center gap-1.5">
-              <Sparkles className="w-4 h-4 text-rose-500" />
+              {/* <Sparkles className="w-4 h-4 text-rose-500" /> */}
               Tentang Desain Stempel
             </h3>
             <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200/80 text-sm text-zinc-700 space-y-1">

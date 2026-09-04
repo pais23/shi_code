@@ -265,7 +265,7 @@ export const ProposeLocationModal: React.FC<ProposeLocationModalProps> = ({
                 type="submit"
                 className="w-full py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-full text-xs font-semibold uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-1.5"
               >
-                <Sparkles className="w-4 h-4" />
+                {/* <Sparkles className="w-4 h-4" /> */}
                 Kirim Usulan Lokasi
               </button>
             </div>

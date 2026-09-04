@@ -155,7 +155,7 @@ export const LocationExplorer: React.FC<LocationExplorerProps> = ({
 
         <div className="relative z-10 max-w-2xl space-y-3.5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-zinc-200 text-xs font-medium tracking-wide">
-            <Sparkles className="w-3.5 h-3.5 text-rose-400" />
+            {/* <Sparkles className="w-3.5 h-3.5 text-rose-400" /> */}
             <span>Database Stempel Nusantara</span>
           </div>
           
